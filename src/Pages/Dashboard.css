@@ -1,0 +1,41 @@
+.dashboard-container {
+  min-height: 100vh;
+  padding: 2rem;
+  transition: background-color 0.3s, color 0.3s;
+   /* Added to center the container horizontally */
+  max-width: 1200px;  /* or 100% max-width depending on your preference */
+  margin: 0 ;     /* centers horizontally */
+  box-sizing: border-box;
+}
+
+.inner-wrapper {
+  background: #1b2b3f;
+  border-radius: 20px;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.dashboard-container.light {
+  background-color: #f8f9fa;
+  color: #1c1c1c;
+}
+
+.dashboard-container.dark {
+  background-color: #1c1c1c;
+  color: #f1f1f1;
+}
+
+.theme-toggle {
+  padding: 10px 20px;
+  background-color: #2d3af5;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: transform 0.2s;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.05);
+}

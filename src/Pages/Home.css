@@ -1,0 +1,202 @@
+/* Add this to your global CSS or at the top of Home.css */ 
+html, body { 
+  margin: 0; 
+  padding: 0; 
+  overflow-x: hidden; /* prevent horizontal overflow */ 
+  width: 100vw; /* ensure full viewport width */ 
+} 
+
+/* Container fills viewport, hides overflow */ 
+.home-container { 
+  position: relative; 
+  height: 100vh; 
+  width: 100vw; /* changed from 100% to 100vw */ 
+  overflow: hidden; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  color: white; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  text-align: center; 
+  padding: 0 20px; 
+  box-sizing: border-box; 
+  background-color: #000; /* fallback color */ 
+} 
+
+/* Video fills container, covers entire area, stays behind */ 
+.background-video { 
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  min-width: 100%; 
+  min-height: 100%; 
+  width: auto; 
+  height: auto; 
+  transform: translate(-50%, -50%); 
+  object-fit: cover; 
+  z-index: 0; 
+  filter: brightness(0.5); 
+} 
+
+/* Semi-transparent overlay to improve text readability */ 
+.overlay { 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  background: rgba(15, 23, 42, 0.6); 
+  z-index: 1; 
+} 
+
+/* Content on top */ 
+.homepage-content { 
+  position: relative; 
+  z-index: 2; 
+  max-width: 700px; 
+  padding: 40px 20px; 
+} 
+
+.homepage-content h1 { 
+  font-size: 3.5rem; 
+  font-weight: 700; 
+  margin-bottom: 0.5em; 
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8); 
+} 
+
+.subtitle { 
+  font-size: 1.5rem; 
+  margin-bottom: 1em; 
+  font-weight: 600; 
+  letter-spacing: 0.05em; 
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.7); 
+} 
+
+.description { 
+  font-size: 1.125rem; 
+  margin-bottom: 2em; 
+  line-height: 1.6; 
+  color: #ddd; 
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6); 
+} 
+
+/* Buttons container */ 
+.cta-buttons { 
+  display: flex; 
+  justify-content: center; 
+  gap: 20px; 
+  flex-wrap: wrap; 
+} 
+
+/* Base button style */ 
+.cta-button { 
+  padding: 14px 36px; 
+  border-radius: 30px; 
+  font-size: 1.125rem; 
+  font-weight: 600; 
+  text-decoration: none; 
+  cursor: pointer; 
+  transition: all 0.3s ease; 
+  min-width: 160px; 
+  display: inline-block; 
+  user-select: none; 
+} 
+
+.cta-button:hover, 
+.cta-button:focus { 
+  transform: scale(1.05); 
+  box-shadow: 0 4px 12px rgba(0, 170, 255, 0.4); 
+} 
+
+/* Outline button style */ 
+.cta-button.outline { 
+  background: transparent; 
+  border: 2px solid #00aaff; 
+  color: #00aaff; 
+} 
+
+.cta-button.outline:hover, 
+.cta-button.outline:focus { 
+  background: #00aaff; 
+  color: #fff; 
+  outline: none; 
+} 
+
+/* Solid button style */ 
+.cta-button.solid { 
+  background: #00aaff; 
+  border: none; 
+  color: #fff; 
+} 
+
+.cta-button.solid:hover, 
+.cta-button.solid:focus { 
+  background: #008fcc; 
+  outline: none; 
+} 
+
+/* Responsive text scaling */ 
+@media (max-width: 600px) { 
+  .homepage-content h1 { 
+    font-size: 2.5rem; 
+  } 
+
+  .subtitle { 
+    font-size: 1.2rem; 
+  } 
+
+  .description { 
+    font-size: 1rem; 
+  } 
+
+  .cta-button { 
+    font-size: 1rem; 
+    padding: 12px 28px; 
+  } 
+} 
+
+
+/* Feature Highlights Section */
+
+.feature-highlights {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  margin-top: 20px;
+
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  flex: 1 1 200px;
+  min-width: 220px;
+  color: #00aaff;
+  box-shadow: 0 0 10px rgba(0, 170, 255, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 20px rgba(0, 170, 255, 0.6);
+}
+
+.feature-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 1.25rem;
+  cursor: default;
+}
+
+.feature-card p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #cceeff;
+  cursor: default;
+}
